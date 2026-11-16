@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LogiPuz Support</title>
+<meta name="description" content="Support for LogiPuz: how to play, FAQ and contact.">
+<meta property="og:title" content="LogiPuz">
+<meta property="og:description" content="Endless logic puzzles, each solvable by logic alone. No ads, no subscription.">
+<meta property="og:image" content="https://taaaaho.github.io/logipuz-support/og-image.png">
+<meta property="og:url" content="https://taaaaho.github.io/logipuz-support/en/">
+<link rel="icon" href="../icon.png">
+<link rel="alternate" hreflang="ja" href="https://taaaaho.github.io/logipuz-support/">
+<style>
+  :root {
+    --bg: #FBF6EE; --card: #FFFFFF; --ink: #2B2A33; --sub: #6B6875; --line: #EDE6DA;
+    --accent: #6C63F0; --star: #F29A1F; --np: #1FA58F; --rd: #EC6A5C;
+    --star-soft: #FFF1DB; --np-soft: #DDF4EF; --rd-soft: #FDE5E1;
+    --tt: #3E86E0; --sg: #5DA83A; --nl: #C855A8; --tt-soft: #E1ECFA; --sg-soft: #E5F2DE; --nl-soft: #F6E1F0;
+    --ng: #6A4CC9; --br: #1A87A1; --cb: #9A7A12; --ng-soft: #ECE6FB; --br-soft: #DDF2F7; --cb-soft: #F8F0D6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15151B; --card: #23232B; --ink: #ECEAF2; --sub: #A6A3B0; --line: #33333D;
+      --accent: #9A93FF; --star: #F7B54E; --np: #4DCDB8; --rd: #F58D80;
+      --star-soft: #3A2F1E; --np-soft: #1D3632; --rd-soft: #3B2523;
+      --tt: #6FA8F2; --sg: #86C866; --nl: #E07FC4; --tt-soft: #1E2B3D; --sg-soft: #22311C; --nl-soft: #3A2234;
+      --ng: #A48BF0; --br: #4FC3DD; --cb: #E6C252; --ng-soft: #2A2340; --br-soft: #1B3238; --cb-soft: #37301A;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.8; font-size: 16px;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { display: flex; gap: 20px; align-items: center; margin-bottom: 28px; }
+  header img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 8px 24px rgba(0,0,0,.12); flex-shrink: 0; }
+  h1 { font-size: 1.7rem; margin: 0; line-height: 1.3; }
+  .lead { margin: 4px 0 0; color: var(--sub); }
+  h2 { font-size: 1.25rem; margin: 40px 0 12px; }
+  .card { background: var(--card); border-radius: 20px; padding: 20px 22px; box-shadow: 0 4px 14px rgba(0,0,0,.05); margin: 12px 0; }
+  .genres { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px; }
+  .genre { border-radius: 18px; padding: 16px 18px; }
+  .genre h3 { margin: 0 0 4px; font-size: 1.1rem; }
+  .genre p { margin: 0; font-size: .95rem; }
+  .g-star { background: var(--star-soft); } .g-star h3 { color: var(--star); }
+  .g-np { background: var(--np-soft); } .g-np h3 { color: var(--np); }
+  .g-rd { background: var(--rd-soft); } .g-rd h3 { color: var(--rd); }
+  .g-tt { background: var(--tt-soft); } .g-tt h3 { color: var(--tt); }
+  .g-sg { background: var(--sg-soft); } .g-sg h3 { color: var(--sg); }
+  .g-nl { background: var(--nl-soft); } .g-nl h3 { color: var(--nl); }
+  .g-ng { background: var(--ng-soft); } .g-ng h3 { color: var(--ng); }
+  .g-br { background: var(--br-soft); } .g-br h3 { color: var(--br); }
+  .g-cb { background: var(--cb-soft); } .g-cb h3 { color: var(--cb); }
+  .points { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+  .points li { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: .9rem; }
+  details { background: var(--card); border-radius: 16px; padding: 14px 20px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  summary { cursor: pointer; font-weight: 700; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "Q. "; color: var(--accent); }
+  details p, details ul { margin: 10px 0 0; color: var(--ink); }
+  details ul { padding-left: 1.2em; }
+  .contact { text-align: center; }
+  .contact a { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; text-decoration: none; padding: 10px 26px; border-radius: 999px; font-weight: 700; }
+  footer { margin-top: 48px; color: var(--sub); font-size: .85rem; text-align: center; }
+  footer a { color: var(--sub); }
+  @media (max-width: 480px) {
+    header { flex-direction: column; text-align: center; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="../icon.png" alt="">
+    <div>
+      <h1>LogiPuz</h1>
+      <p class="lead">Endless logic puzzles, each solvable by logic alone.</p>
+    </div>
+  </header>
+
+  <section class="card">
+    <p>Before a puzzle reaches you, the app checks that it has exactly one solution and can be solved without guessing. When you're stuck, a hint shows the next technique to use and where to look, not the answer.</p>
+    <ul class="points">
+      <li>No ads</li><li>No subscription</li><li>No account</li><li>No data collection</li><li>iPhone &amp; iPad</li>
+    </ul>
+  </section>
+
+  <h2>Puzzles</h2>
+  <div class="genres">
+    <div class="genre g-star"><h3>Star Battle</h3><p>Place the given number of stars in every row, column and colored region. Stars never touch, not even diagonally.</p></div>
+    <div class="genre g-np"><h3>Number Place</h3><p>Fill in 1 to 9 once each in every row, column and bold 3×3 box.</p></div>
+    <div class="genre g-rd"><h3>Rectangles</h3><p>Split the grid into rectangles. Each contains one number, which equals its size.</p></div>
+    <div class="genre g-tt"><h3>Two Colors</h3><p>Fill the grid with two colors: never three in a row, and every line is half and half.</p></div>
+    <div class="genre g-sg"><h3>Cross Sums</h3><p>Fill white cells with 1 to 9 so each run adds up to its clue, with no repeats in a run.</p></div>
+    <div class="genre g-nl"><h3>Number Loop</h3><p>Connect the dots into a single loop. Each number tells how many of its sides are lines.</p></div>
+    <div class="genre g-ng"><h3>Nonogram</h3><p>The clues give the runs of filled cells in each row and column. Fill them all in and a picture appears.</p></div>
+    <div class="genre g-br"><h3>Bridges</h3><p>Connect the islands with straight bridges, as many as each number says. No crossings, at most two between a pair, and everything linked.</p></div>
+    <div class="genre g-cb"><h3>Calc Blocks</h3><p>Fill every row and column with each number once, and make each outlined block's math (+ − × ÷) work.</p></div>
+  </div>
+  <p>New to a puzzle? Tap "Learn to Play" at the top of its screen to learn the rules and controls by solving a small puzzle together.</p>
+
+  <h2>FAQ</h2>
+
+  <details>
+    <summary>What can I play for free?</summary>
+    <ul>
+      <li>Lv1 and Lv2 of every puzzle (3 puzzles per puzzle type per day; resets at midnight)</li>
+      <li>The Daily Puzzle, tutorials, the technique guide, and replaying your favorites</li>
+    </ul>
+    <p>Full Unlock (a one-time purchase) removes the daily limit and unlocks Lv3–Lv5, technique practice, Lv5 leaderboards and puzzle types added in the future. It is not a subscription.</p>
+  </details>
+
+  <details>
+    <summary>I bought Full Unlock but it isn't active / I switched devices</summary>
+    <p>Tap "Restore Purchases" in the Settings tab or on the purchase screen. On a device signed in with the Apple Account you used, it comes back at no extra charge. Family Sharing is not supported.</p>
+  </details>
+
+  <details>
+    <summary>Can I move my records to a new device?</summary>
+    <p>Restoring your iPhone from a backup (iCloud or computer) brings your records along.</p>
+    <p>Without a backup, use Settings → "Export Records" on the old device and Settings → "Import Records" on the new one. Duplicate records are skipped.</p>
+  </details>
+
+  <details>
+    <summary>How many puzzles are there?</summary>
+    <p>There's no fixed number. A new puzzle is made each time you play, so you can play as many as you like. The Daily Puzzle is the same for everyone on a given day.</p>
+  </details>
+
+  <details>
+    <summary>How are hints and mistakes counted?</summary>
+    <ul>
+      <li>Each hint you open counts once. Opening it again without changing the grid doesn't add to the count.</li>
+      <li>With "Show Mistakes" on, anything that differs from the solution (a star, number, rectangle or line) turns red and counts as one mistake. × marks and pencil notes are just for you and aren't counted.</li>
+      <li>Two Colors has only two colors, so showing wrong cells would give the answer away. There, only placements that break a rule count as mistakes.</li>
+      <li>While you keep tapping the same cell or side to cycle through its states, nothing is counted until you settle on one.</li>
+      <li>Clearing a puzzle with no hints and no mistakes is a "Perfect".</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>I think this puzzle can't be solved by logic</summary>
+    <p>Every puzzle is checked to have one solution that can be reached without guessing. Tap "Hint" to see the next technique and where to look. If there's a mistake on the grid, the hint tells you that first.</p>
+  </details>
+
+  <details>
+    <summary>How do the leaderboards work?</summary>
+    <p>For each puzzle type, you compete on your average time over your last five Lv5 clears with no hints or mistakes (Star Battle 1-star and 2-star, and Two Colors with and without = ≠ marks, are separate). Using an average keeps one lucky puzzle from deciding the ranking. "Solve Again" and shared puzzles don't count.</p>
+    <p>Leaderboards and achievements use Apple's Game Center. To take part, sign in under Settings → Game Center on your iPhone. Once 50 or more players have joined, the results screen also shows your "Top %".</p>
+  </details>
+
+  <details>
+    <summary>How do I send a puzzle to a friend?</summary>
+    <p>Open a solved puzzle in the Records tab and tap "Share This Puzzle". You can send an image of the puzzle and a link that opens it in the app. Your friend needs the app to open the link.</p>
+  </details>
+
+  <details>
+    <summary>Is any personal data or play data sent anywhere?</summary>
+    <p>Nothing is sent to the developer. There are no ads, analytics or tracking, and your records and settings are stored only on your device. Only if you sign in to Game Center are your achievements and leaderboard times sent to Apple's Game Center. See the <a href="privacy.html">Privacy Policy</a> for details.</p>
+  </details>
+
+  <h2>Contact</h2>
+  <section class="card contact">
+    <p>Please email us with bug reports or feedback.<br>It helps to include your device (e.g. iPhone 15), iOS version and app version (at the bottom of the Settings tab).</p>
+    <a href="mailto:appfactorycloud@gmail.com">Email us</a>
+  </section>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a> · <a href="../">日本語</a></p>
+    <p>© 2026 AppFactoryCloud</p>
+  </footer>
+</main>
+</body>
+</html>

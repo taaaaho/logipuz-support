@@ -6,7 +6,7 @@
 <title>ロジパズ サポート</title>
 <meta name="description" content="ロジパズのサポートページ。遊び方、よくある質問、お問い合わせ先。">
 <meta property="og:title" content="ロジパズ">
-<meta property="og:description" content="問題数は無限大。論理だけで解ける、スターバトル・ナンプレ・四角分けのパズル集。広告なし・サブスクなし。">
+<meta property="og:description" content="問題数は無限大。論理だけで解ける、スターバトル・ナンプレ・ノノグラムなど9つのパズル集。広告なし・サブスクなし。">
 <meta property="og:image" content="https://taaaaho.github.io/logipuz-support/og-image.png">
 <meta property="og:url" content="https://taaaaho.github.io/logipuz-support/">
 <link rel="icon" href="icon.png">
@@ -15,12 +15,16 @@
     --bg: #FBF6EE; --card: #FFFFFF; --ink: #2B2A33; --sub: #6B6875; --line: #EDE6DA;
     --accent: #6C63F0; --star: #F29A1F; --np: #1FA58F; --rd: #EC6A5C;
     --star-soft: #FFF1DB; --np-soft: #DDF4EF; --rd-soft: #FDE5E1;
+    --tt: #3E86E0; --sg: #5DA83A; --nl: #C855A8; --tt-soft: #E1ECFA; --sg-soft: #E5F2DE; --nl-soft: #F6E1F0;
+    --ng: #6A4CC9; --br: #1A87A1; --cb: #9A7A12; --ng-soft: #ECE6FB; --br-soft: #DDF2F7; --cb-soft: #F8F0D6;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #15151B; --card: #23232B; --ink: #ECEAF2; --sub: #A6A3B0; --line: #33333D;
       --accent: #9A93FF; --star: #F7B54E; --np: #4DCDB8; --rd: #F58D80;
       --star-soft: #3A2F1E; --np-soft: #1D3632; --rd-soft: #3B2523;
+      --tt: #6FA8F2; --sg: #86C866; --nl: #E07FC4; --tt-soft: #1E2B3D; --sg-soft: #22311C; --nl-soft: #3A2234;
+      --ng: #A48BF0; --br: #4FC3DD; --cb: #E6C252; --ng-soft: #2A2340; --br-soft: #1B3238; --cb-soft: #37301A;
     }
   }
   * { box-sizing: border-box; }
@@ -36,13 +40,19 @@
   .lead { margin: 4px 0 0; color: var(--sub); }
   h2 { font-size: 1.25rem; margin: 40px 0 12px; }
   .card { background: var(--card); border-radius: 20px; padding: 20px 22px; box-shadow: 0 4px 14px rgba(0,0,0,.05); margin: 12px 0; }
-  .genres { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .genres { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 12px; }
   .genre { border-radius: 18px; padding: 16px 18px; }
   .genre h3 { margin: 0 0 4px; font-size: 1.1rem; }
   .genre p { margin: 0; font-size: .95rem; }
   .g-star { background: var(--star-soft); } .g-star h3 { color: var(--star); }
   .g-np { background: var(--np-soft); } .g-np h3 { color: var(--np); }
   .g-rd { background: var(--rd-soft); } .g-rd h3 { color: var(--rd); }
+  .g-tt { background: var(--tt-soft); } .g-tt h3 { color: var(--tt); }
+  .g-sg { background: var(--sg-soft); } .g-sg h3 { color: var(--sg); }
+  .g-nl { background: var(--nl-soft); } .g-nl h3 { color: var(--nl); }
+  .g-ng { background: var(--ng-soft); } .g-ng h3 { color: var(--ng); }
+  .g-br { background: var(--br-soft); } .g-br h3 { color: var(--br); }
+  .g-cb { background: var(--cb-soft); } .g-cb h3 { color: var(--cb); }
   .points { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
   .points li { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: .9rem; }
   details { background: var(--card); border-radius: 16px; padding: 14px 20px; margin: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
@@ -67,7 +77,7 @@
     <img src="icon.png" alt="">
     <div>
       <h1>ロジパズ</h1>
-      <p class="lead">問題数は無限大。論理だけで解ける、3つのパズル。</p>
+      <p class="lead">問題数は無限大。論理だけで解ける、9つのパズル。</p>
     </div>
   </header>
 
@@ -83,6 +93,12 @@
     <div class="genre g-star"><h3>スターバトル</h3><p>どの行・列・色の領域にも決まった数の星を。星どうしは縦・横・ななめに隣り合いません。</p></div>
     <div class="genre g-np"><h3>ナンプレ</h3><p>縦・横・太線の3×3のブロックのどれにも、1〜9を1つずつ入れます。</p></div>
     <div class="genre g-rd"><h3>四角分け</h3><p>盤面を長方形で区切ります。どの長方形にも数字が1つ入り、その数字がマスの数です。</p></div>
+    <div class="genre g-tt"><h3>2色ならべ</h3><p>マスを2色で塗り分けます。同じ色は3つ並べず、どの行・列も2色が半分ずつ。「＝」「≠」の印つきモードもあります。</p></div>
+    <div class="genre g-sg"><h3>足し算パズル</h3><p>白マスに1〜9を入れ、横・縦のかたまりの合計を斜線のマスの数字に合わせます。かたまりの中で数字は重なりません。</p></div>
+    <div class="genre g-nl"><h3>数字ループ</h3><p>点と点を結んで、1本の輪を作ります。数字は、そのマスのまわりに引く線の数です。</p></div>
+    <div class="genre g-ng"><h3>ノノグラム</h3><p>盤面の外の数字は、その行・列で続けて塗るマスの数です。数字どおりに塗ると、絵が浮かび上がります。</p></div>
+    <div class="genre g-br"><h3>橋つなぎ</h3><p>島の数字の本数だけ、たて・よこに橋をかけます。橋は交差せず、2つの島の間は2本まで。全部の島をひとつにつなぎます。</p></div>
+    <div class="genre g-cb"><h3>計算ブロック</h3><p>どの行・列にも数字を1つずつ入れ、太線のブロックの計算（＋ − × ÷）に合わせます。</p></div>
   </div>
   <p>はじめての方は、各パズルの画面の上にある「遊び方を学ぶ」から、小さな問題をいっしょに解きながらルールと操作を覚えられます。</p>
 
@@ -117,7 +133,9 @@
     <summary>ヒントやミスは、どう数えられますか？</summary>
     <ul>
       <li>ヒントは、押したときに1回と数えます。盤面を変えないまま何度押しても、回数は増えません。</li>
-      <li>「ミスを表示する」がオンのとき、答えと違うもの（★・数字・四角）を置くと赤く表示し、1ミスと数えます。スターバトルの×やナンプレの候補メモは、自分用のメモなので対象にしません。オフにするとミスは数えません（答えと違う入力はクリアするまで分かりません）。</li>
+      <li>「ミスを表示する」がオンのとき、答えと違うもの（★・数字・四角・線）を置くと赤く表示し、1ミスと数えます。×や候補メモは、自分用のメモなので対象にしません。オフにするとミスは数えません（答えと違う入力はクリアするまで分かりません）。</li>
+      <li>2色ならべは2色しかないため、答えと違うマスを見せると答えが分かってしまいます。そこで、ルールに反する並び（同じ色が3つ並ぶなど）を作ったときだけミスと数えます。</li>
+      <li>同じマスを続けてタップして色や線を切り替えている途中は、ミスと数えません。別のマスを触ったときか、少し時間がたったときに確定します。</li>
       <li>ヒントもミスもなしでクリアすると「パーフェクト」です。</li>
     </ul>
   </details>
@@ -129,7 +147,7 @@
 
   <details>
     <summary>ランキングはどう決まりますか？</summary>
-    <p>各パズルの Lv5 を、ヒントもミスもなしでクリアした直近5問の平均タイムで競います（スターバトルは星1個と星2個で別々です）。1問の当たり外れに左右されにくいよう、平均にしています。「もう一度解く」や共有された問題は対象外です。</p>
+    <p>各パズルの Lv5 を、ヒントもミスもなしでクリアした直近5問の平均タイムで競います（スターバトルの星1個と星2個、2色ならべの印なしと「＝」「≠」つきは別々です）。1問の当たり外れに左右されにくいよう、平均にしています。「もう一度解く」や共有された問題は対象外です。</p>
     <p>ランキングと実績は Apple の Game Center を使います。参加するには、iPhone の「設定」→「Game Center」でサインインしてください。参加者が50人以上になると、結果画面に「上位○%」も表示されます。</p>
   </details>
 
